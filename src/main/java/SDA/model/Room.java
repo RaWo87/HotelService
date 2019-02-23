@@ -20,7 +20,7 @@ public class Room {
         this.balcony = balcony;
     }
     public boolean isAvailable(){
-        return isAvailable();
+        return this.available;
     }
     @Override
     public String toString() {
