@@ -22,6 +22,10 @@ public class Room {
     public boolean isAvailable(){
         return this.available;
     }
+    public int getRoomNr(){
+        return this.roomNr;
+    }
+    public void setAvailable(boolean a){ this.available=a;}
     @Override
     public String toString() {
         return "Room{" +

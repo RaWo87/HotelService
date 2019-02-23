@@ -13,9 +13,11 @@ public class HotelService {
     public HotelService(Hotel hotel){
         this.radisonBlue = Objects.requireNonNull(hotel,"must be defined");
     }
+
     public List<Room> getALLRooms(){
         return radisonBlue.getHotelRooms();
     }
+
     public List<Room> getAvailableRooms(){
         List<Room> available = new ArrayList<>();
 
@@ -27,6 +29,21 @@ public class HotelService {
         }
         return available;
     }
-    public void makeReservation(){}
+    public void bookRoom(int roomNr){
+        for (Room room:getALLRooms()
+             ) {
+            if(room.getRoomNr()==roomNr && room.isAvailable()){
+                room.setAvailable(false);
+            }
+        }
+    }
+    public void makeAvailable(int roomNr){
+        for (Room room:getALLRooms()
+        ) {
+            if(room.getRoomNr()==roomNr && !room.isAvailable()){
+                room.setAvailable(true);
+            }
+        }
+    }
 
 }
