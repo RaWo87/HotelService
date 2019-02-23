@@ -19,13 +19,12 @@ public class HotelService {
     public List<Room> getAvailableRooms(){
         List<Room> available = new ArrayList<>();
 
-        for (Room room: radisonBlue.getHotelRooms()
+        for (Room room: getALLRooms()
              ) {
             if(room.isAvailable()){
                 available.add(room);
             }
         }
-
         return available;
     }
     public void makeReservation(){}
